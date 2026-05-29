@@ -4,10 +4,7 @@ import { Topics } from '../components/Topics'
 
 export default function TopicsPage() {
   return (
-    <PageLayout
-      title="Topics"
-      description="Cybersecurity topics Cybercorns covers — web, crypto, forensics, reversing, and more."
-    >
+    <PageLayout description="Cybersecurity topics Cybercorns covers — web, crypto, forensics, reversing, and more.">
       <Topics />
     </PageLayout>
   )

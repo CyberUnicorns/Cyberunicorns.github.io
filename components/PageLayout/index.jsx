@@ -9,15 +9,11 @@ const VisualEffects = dynamic(
   { ssr: false }
 )
 
-export function PageLayout({ children, title, description }) {
-  const pageTitle = title
-    ? `${title} | Cybercorns`
-    : "Cybercorns - NCSSM Durham's Cybersecurity Club"
-
+export function PageLayout({ children, description }) {
   return (
     <>
       <Head>
-        <title>{pageTitle}</title>
+        <title>Cybercorns</title>
         {description ? <meta name="description" content={description} /> : null}
       </Head>
       <NavBar />
