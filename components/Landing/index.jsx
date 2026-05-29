@@ -1,4 +1,4 @@
-import { Box, Heading, Container, Grid, GridItem, Text, Button, Stack } from '@chakra-ui/react'
+import { Box, Heading, Container, Button, Stack } from '@chakra-ui/react'
 import { LightboxImage } from '../Lightbox'
 import { ScrollReveal } from '../ScrollReveal'
 import { TypewriterText } from '../TypewriterText'
@@ -34,22 +34,23 @@ export function Landing() {
         display="flex"
         alignItems="center"
       >
-        <Grid
-          templateColumns={{ base: '1fr', lg: 'repeat(2, 1fr)' }}
-          align="center"
-          gap={8}
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          textAlign="center"
           w="100%"
+          gap={6}
         >
-          <GridItem colSpan={1} my="auto">
-            <ScrollReveal>
+          <ScrollReveal>
+            <Box>
               <Heading as="h1" fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }} color="gray.600">
                 Join the
               </Heading>
               <Heading
-                as="h1"
+                as="span"
                 fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
                 color="blue.800"
-                d="inline"
                 className="hero-title-inline"
               >
                 Cyber
@@ -62,80 +63,73 @@ export function Landing() {
                 lineHeight="1.2"
                 color="blue.500"
               />
-            </ScrollReveal>
-          </GridItem>
+            </Box>
+          </ScrollReveal>
 
-          <GridItem colSpan={1}>
-            <ScrollReveal delay={150}>
-              <Box
-                display="flex"
-                flexDirection="column"
-                alignItems="center"
-                textAlign="center"
+          <ScrollReveal delay={150}>
+            <div className="fx-hero-glow fx-tilt">
+              <LightboxImage
+                src="/logo.png"
+                alt="Cybercorns unicorn logo"
+                className="landing-logo"
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={250}>
+            <TypewriterText
+              text={tagline}
+              fontSize={{ base: 'md', md: 'lg' }}
+              color="gray.700"
+              maxW="420px"
+              lineHeight="1.6"
+              minH={{ base: '4.5rem', md: '3.5rem' }}
+            />
+          </ScrollReveal>
+
+          <ScrollReveal delay={350}>
+            <Stack
+              direction={{ base: 'column', sm: 'row' }}
+              spacing={4}
+              justify="center"
+              align="center"
+              flexWrap="wrap"
+            >
+              <Button
+                as="a"
+                href={joinLinks.discord}
+                colorScheme="blue"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-interactive fx-shimmer"
               >
-                <div className="fx-hero-glow fx-tilt">
-                  <LightboxImage
-                    src="/logo.png"
-                    alt="Cybercorns unicorn logo"
-                    className="landing-logo"
-                  />
-                </div>
-
-                <TypewriterText
-                  text={tagline}
-                  fontSize={{ base: 'md', md: 'lg' }}
-                  color="gray.700"
-                  mt={5}
-                  maxW="420px"
-                  lineHeight="1.6"
-                  minH={{ base: '4.5rem', md: '3.5rem' }}
-                />
-
-                <Stack
-                  direction={{ base: 'column', sm: 'row' }}
-                  spacing={4}
-                  mt={6}
-                  justify="center"
-                  align="center"
-                  flexWrap="wrap"
-                >
-                  <Button
-                    as="a"
-                    href={joinLinks.discord}
-                    colorScheme="blue"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-interactive fx-shimmer"
-                  >
-                    Discord
-                  </Button>
-                  <Button
-                    as="a"
-                    href={joinLinks.instagram}
-                    variant="outline"
-                    colorScheme="pink"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-interactive fx-shimmer"
-                  >
-                    Instagram
-                  </Button>
-                  <Button
-                    as="a"
-                    href={joinLinks.interestForm}
-                    variant="outline"
-                    colorScheme="blue"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-interactive fx-shimmer"
-                  >
-                    Interest Form
-                  </Button>
-                </Stack>
-              </Box>
-            </ScrollReveal>
-          </GridItem>
-        </Grid>
+                Discord
+              </Button>
+              <Button
+                as="a"
+                href={joinLinks.instagram}
+                variant="outline"
+                colorScheme="pink"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-interactive fx-shimmer"
+              >
+                Instagram
+              </Button>
+              <Button
+                as="a"
+                href={joinLinks.interestForm}
+                variant="outline"
+                colorScheme="blue"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-interactive fx-shimmer"
+              >
+                Interest Form
+              </Button>
+            </Stack>
+          </ScrollReveal>
+        </Box>
       </Container>
     </Box>
   )
