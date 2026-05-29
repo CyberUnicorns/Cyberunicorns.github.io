@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="HSCTF">
+  <rect width="240" height="240" rx="28" fill="#1a365d"/>
+  <circle cx="120" cy="92" r="42" fill="#4299e1"/>
+  <text x="120" y="104" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800">HS</text>
+  <text x="120" y="168" text-anchor="middle" fill="#90cdf4" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="800">CTF</text>
+</svg>

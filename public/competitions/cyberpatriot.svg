@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="CyberPatriot">
+  <defs>
+    <linearGradient id="cp-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#004990"/>
+      <stop offset="100%" stop-color="#002e5e"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#cp-blue)" d="M120 18L206 58v74c0 52-38 88-86 108-48-20-86-56-86-108V58z"/>
+  <path fill="#b30838" d="M120 42l58 26v48c0 34-24 58-58 72-34-14-58-38-58-72V68z" opacity="0.92"/>
+  <text x="120" y="118" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Cyber</text>
+  <text x="120" y="146" text-anchor="middle" fill="#c59840" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Patriot</text>
+</svg>

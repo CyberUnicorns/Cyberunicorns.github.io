@@ -1,79 +1,139 @@
-import { Box, Img, Heading, Container, Grid, GridItem, Text, Button, Link, Stack } from '@chakra-ui/react'
+import { Box, Heading, Container, Grid, GridItem, Text, Button, Stack } from '@chakra-ui/react'
+import { LightboxImage } from '../Lightbox'
+import { ScrollReveal } from '../ScrollReveal'
+import { TypewriterText } from '../TypewriterText'
+import { GlitchText } from '../GlitchText'
 
-// these are the confirmed join links we have right now.
 const joinLinks = {
   discord: 'https://discord.gg/R67SaG78Ad',
+  instagram: 'https://instagram.com/ncssm_cybercorns',
   interestForm:
     'https://docs.google.com/forms/d/e/1FAIpQLSezdZrJK939zlVGsvFhBark3VsP5kXc4KrLT-2yJc2T9PveQg/viewform?usp=sharing&ouid=118136963325335320825',
 }
 
-// this keeps the old hero but swaps in the new recruiting message.
+const tagline =
+  "NCSSM Durham's official cybersecurity club open to all Durham, Morganton, and Online students."
+
 export function Landing() {
   return (
     <Box
-      bgImage="url('/cover.jpg')"
-      bgSize="cover"
-      bgPosition="center"
-      bgRepeat="no-repeat"
+      id="welcome"
+      as="section"
+      className="hero-section hero-section--fullscreen"
       w="100%"
       p={4}
       color="gray.800"
       mt="0"
     >
-      <Container maxW="container.xl" py={{ base: 8, md: 16 }}>
-        <Grid templateColumns={{ base: '1fr', lg: 'repeat(2, 1fr)' }} align="center" gap={8}>
+      <Container
+        maxW="container.xl"
+        py={{ base: 6, md: 10 }}
+        px={4}
+        className="hero-content"
+        flex="1"
+        display="flex"
+        alignItems="center"
+      >
+        <Grid
+          templateColumns={{ base: '1fr', lg: 'repeat(2, 1fr)' }}
+          align="center"
+          gap={8}
+          w="100%"
+        >
           <GridItem colSpan={1} my="auto">
-            <Heading as="h1" fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }} color="gray.300">
-              Join the
-            </Heading>
-            <Heading as="h1" fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }} color="white" d="inline">
-              Cyber
-            </Heading>
-            <Heading
-              as="h1"
-              fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
-              color="blue.200"
-              d="inline"
-            >
-              corns
-            </Heading>
-
-            <Text fontSize={{ base: 'lg', md: '2xl' }} color="white" mt={5} maxW="540px">
-              NCSSM Durham&apos;s official cybersecurity club for students who want to learn
-              cyber and actually use it.
-            </Text>
-
-            <Text color="gray.200" mt={4} maxW="560px">
-              Weekly optional meetings, hands-on projects, industry connections, and training
-              for competitions like picoCTF.
-            </Text>
-
-            <Stack direction={{ base: 'column', sm: 'row' }} spacing={4} mt={6}>
-              <Button as="a" href={joinLinks.discord} colorScheme="blue" isExternal>
-                join the discord
-              </Button>
-              <Button
-                as="a"
-                href={joinLinks.interestForm}
-                variant="outline"
-                color="white"
-                borderColor="whiteAlpha.700"
-                _hover={{ bg: 'whiteAlpha.200' }}
-                isExternal
+            <ScrollReveal>
+              <Heading as="h1" fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }} color="gray.600">
+                Join the
+              </Heading>
+              <Heading
+                as="h1"
+                fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
+                color="blue.800"
+                d="inline"
+                className="hero-title-inline"
               >
-                interest form
-              </Button>
-            </Stack>
-
-            <Text color="gray.300" mt={4}>
-              Details for the first meeting and interest session will be posted on the website.
-            </Text>
+                Cyber
+              </Heading>
+              <GlitchText
+                text="corns"
+                className="hero-title-inline hero-title-glitch"
+                fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
+                fontWeight="bold"
+                lineHeight="1.2"
+                color="blue.500"
+              />
+            </ScrollReveal>
           </GridItem>
 
           <GridItem colSpan={1}>
-            <Link href="/" _hover={{}}>
-              <Img src="/logo.png" maxW={{ base: '260px', md: '360px' }} mx="auto" alt="Cybercorns unicorn logo" />
-            </Link>
+            <ScrollReveal delay={150}>
+              <Box
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                textAlign="center"
+              >
+                <div className="fx-hero-glow fx-tilt">
+                  <LightboxImage
+                    src="/logo.png"
+                    alt="Cybercorns unicorn logo"
+                    className="landing-logo"
+                  />
+                </div>
+
+                <TypewriterText
+                  text={tagline}
+                  fontSize={{ base: 'md', md: 'lg' }}
+                  color="gray.700"
+                  mt={5}
+                  maxW="420px"
+                  lineHeight="1.6"
+                  minH={{ base: '4.5rem', md: '3.5rem' }}
+                />
+
+                <Stack
+                  direction={{ base: 'column', sm: 'row' }}
+                  spacing={4}
+                  mt={6}
+                  justify="center"
+                  align="center"
+                  flexWrap="wrap"
+                >
+                  <Button
+                    as="a"
+                    href={joinLinks.discord}
+                    colorScheme="blue"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-interactive fx-shimmer"
+                  >
+                    Discord
+                  </Button>
+                  <Button
+                    as="a"
+                    href={joinLinks.instagram}
+                    variant="outline"
+                    colorScheme="pink"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-interactive fx-shimmer"
+                  >
+                    Instagram
+                  </Button>
+                  <Button
+                    as="a"
+                    href={joinLinks.interestForm}
+                    variant="outline"
+                    colorScheme="blue"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-interactive fx-shimmer"
+                  >
+                    Interest Form
+                  </Button>
+                </Stack>
+              </Box>
+            </ScrollReveal>
           </GridItem>
         </Grid>
       </Container>
